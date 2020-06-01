@@ -327,7 +327,7 @@ inline-block 개체들은 htmll에서 줄내림을 할 시 여백이 한칸 생�
     display: block;
     width: 160px;
     height: 45px;
-    border: 1px solid #FFF;
+    border: 1px solid #fff;
     font-size: 16px;
     color: #fff;
     text-align: center;
@@ -406,6 +406,134 @@ inline-block 개체들은 htmll에서 줄내림을 할 시 여백이 한칸 생�
 .magazine.slide .next {
     right: 50%;
     margin: 26px -640px 0 0;
+}
+
+
+/* 배너부분 */
+
+.notice>div {
+    width: 1180px;
+    margin: 0 auto;
+    padding: 55px 0;
+}
+
+.notice>div .top>ul a {
+    height: 280px;
+    width: 280px;
+    text-align: center;
+    display: block;
+    padding-top: 100px;
+    box-sizing: border-box;
+    font-size: 17px;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.notice>div .top>ul a:hover {
+    background: rgba(45, 91, 121, 0.3);
+}
+
+.notice>div .top>ul a span {
+    /*display: none; 
+    이렇게 해주면 span요소가 hover될때만 span요소가 나타남 */
+    position: relative;
+    top: 10px;
+    opacity: 0;
+    display: block;
+    font-weight: normal;
+    font-size: 13px;
+    padding: 20px 0 0;
+    transition: 0.5s;
+    /* 이렇게 해주면 글씨가 위에서 떨어짐.  
+    a span과 a:hover span 의 디스플레이 블럭을 맞춰줘야함 */
+}
+
+.notice>div .top>ul a:hover span {
+    top: 0;
+    opacity: 1;
+    /* hover될때 애니메이션은 폰트사이즈라던지 하는 디자인 요소는 넣으면 안됨 */
+}
+
+.notice>div .top>ul li {
+    float: left;
+    padding: 0 20px 0 0;
+}
+
+
+/* li 요소들은 밑으로 떨어지기때문에 옆으로 가려면 float을 줘야함 */
+
+.notice>div .top>ul li:nth-child(1) {
+    background: url(../img/bg_key_link01.jpg) no-repeat;
+}
+
+
+/* background-image 와 background가 같이 들어갈 시 이미지가 위로 올라옴
+자식개체가 부모개체 위로 올라옴 */
+
+.notice>div .top>ul li:nth-child(2) {
+    background: url(../img/bg_key_link02.jpg) no-repeat;
+}
+
+.notice>div .top>ul li:nth-child(2) a {
+    color: #000;
+    /* 공통폰트정보가 li에 들어가있어서 따로 줘야함 */
+}
+
+.notice>div .top>ul li:nth-child(3) {
+    background: url(../img/bg_key_link03.jpg) no-repeat;
+}
+
+.notice>div .top>ul {
+    float: left;
+}
+
+.notice>div .top>div {
+    float: left;
+    width: 280px;
+    height: 280px;
+    background: rgb(219, 218, 218);
+    padding: 36px 20px 0;
+    box-sizing: border-box;
+}
+
+.notice>div .top>div div {
+    padding: 0 0 10px;
+}
+
+.notice>div .top>div h2 {
+    font-size: 17px;
+    line-height: 100%;
+    color: #000;
+    text-align: center;
+    padding-bottom: 29px;
+}
+
+.notice>div .top>div select,
+.notice>div .top>div input {
+    width: 100%;
+    height: 45px;
+    border: none;
+    padding: 0;
+    text-indent: 20px;
+}
+
+.notice>div .top>div input::-webkit-input-placeholder {
+    color: #949494;
+    font-size: 14px;
+}
+
+.notice>div .top>div a {
+    display: block;
+    background: #2d5b79 no-repeat;
+    height: 45px;
+    line-height: 45px;
+    /* 블럭 안에 글씨 세로정렬 할때는 줄간격, 가로는 text-align을 주면됨 */
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 20px;
+    /* 패딩을 주면 블럭이 커지므로 마진으로 윗쪽 여백을 조절 */
 }
 
 
@@ -509,3 +637,295 @@ inline-block 개체들은 htmll에서 줄내림을 할 시 여백이 한칸 생�
 
 
 /* a 요소로 잡는 이유는 배경을 컨트롤하기 위함, 보더로 정확한 위치 수시로 체크 */
+
+.notice article {
+    padding: 20px 0 0;
+}
+
+.notice article>div {
+    float: left;
+    position: relative;
+    width: 580px;
+    background: #949494;
+}
+
+.notice article>div a {
+    font-size: 16px;
+    color: #424241;
+}
+
+.notice article>div a p {
+    font-size: 12px;
+    color: #001829;
+}
+
+.notice article>div>a {
+    position: absolute;
+    right: 23px;
+    top: 24px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    /* border-radius로 원을 만들려면 높이만큼 줌 */
+    color: transparent;
+    background: url(../img/sp_com.png) no-repeat -196px -60px white;
+    /* 이미지를 따와서 원안에 정렬할때 개발자도구 활용 */
+}
+
+.notice article>div h2 {
+    height: 77px;
+    border-bottom: 1px solid white;
+    font-size: 24px;
+    line-height: 77px;
+    text-align: center;
+    color: #2d5b79;
+}
+
+.notice article>div.left ul li {
+    float: left;
+    width: 50%;
+    padding: 35px;
+    border-left: 1px solid white;
+    box-sizing: border-box;
+}
+
+.notice article>div.left ul li:first-child {
+    border-left: none;
+}
+
+.notice article>div.left ul li span {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* 무조건 한줄로 처리하고 텍스트가 길면 말줄임표로 처리할수 있게 하는 설정 */
+    line-height: 100%;
+}
+
+.notice article>div.left ul li p {
+    padding: 22px 0 16px;
+    line-height: 100%;
+    /* 각 li요소와 그 안의 div 요소들의 줄간격 조정을 통해 양쪽의 박스 크기를 맞춤 */
+}
+
+.notice article>div.left ul li div {
+    line-height: 21px;
+}
+
+.notice article>div.right {
+    /* div.right는 붙여적어야함. */
+    float: right;
+    width: 580px;
+    background: #949494;
+}
+
+.notice article>div.right ul li {
+    position: relative;
+    border-bottom: 1px solid white;
+}
+
+.notice article>div.right ul li:last-child {
+    border-bottom: none;
+}
+
+.notice article>div.right ul li a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    text-indent: 30px;
+    width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.notice article>div.right ul li p {
+    position: absolute;
+    right: 30px;
+    top: 0;
+}
+
+
+/* 푸터 영역 */
+
+.banner {
+    padding: 55px 0;
+    background: url(../img/bg_main_business.jpg) no-repeat center top;
+}
+
+.banner ul {
+    display: flex;
+    width: 1180px;
+    margin: 0 auto;
+}
+
+.banner ul li {
+    flex: 1;
+    padding: 0 0 0 20px;
+}
+
+
+/* 배너가 나중에 바뀌거나 할 가능성이 있는 경우 각각 클래스를 주고 이미지를 따로 
+넣어서 유동성 있게 함. 그렇지 않고 고정 서비스이면 nth child를 주면됨 */
+
+.banner ul li:first-child {
+    padding: 0;
+}
+
+.banner ul li a {
+    display: block;
+    height: 390px;
+    font-size: 14px;
+    color: #3e413d;
+    text-align: center;
+    padding: 303px 0 0;
+    box-sizing: border-box;
+    /* 패딩과 높이가 부딪치지 않게 항상 둘이 같이 넣을땐 박스사이징 */
+}
+
+.banner ul li a strong {
+    display: block;
+    font-size: 23px;
+    color: #000;
+}
+
+.banner ul li:nth-child(1) a {
+    background: url(../img/bg_business_link01.jpg) no-repeat;
+}
+
+.banner ul li:nth-child(2) a {
+    background: url(../img/bg_business_link02.jpg) no-repeat;
+}
+
+.banner ul li:nth-child(3) a {
+    background: url(../img/bg_business_link03.jpg) no-repeat;
+}
+
+.banner ul li:nth-child(4) a {
+    background: url(../img/bg_business_link04.jpg) no-repeat;
+}
+
+footer .top {
+    background: #383f43;
+}
+
+
+/* header, body, footer, section 등 클래스가 아닌 원래 있는 선택자는 앞에 점 안찍음 */
+
+footer .top>div {
+    padding: 13px 0;
+    width: 1180px;
+    margin: 0 auto;
+}
+
+footer .top>div ul {
+    float: left;
+}
+
+footer .top>div ul li {
+    position: relative;
+    float: left;
+    padding: 0 19px 0 0;
+}
+
+footer .top>div ul li:last-child:after {
+    display: none;
+}
+
+footer .top>div ul li:after {
+    content: "";
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 8px;
+    background: #fff;
+    /* 사이에 막대 만들기 : 부모에 relative주고 absolute 포지션으로 가로세로 
+    크기와 배경색을 주고 top, right, margin top이나 translate -50%조정으로 가운데 맞춤 */
+}
+
+footer .top>div ul li a {
+    color: #fff;
+    font-size: 14px;
+    line-height: 45px;
+    /* 패딩 준걸 빼고 줄간격을 줘서 세로정렬 */
+}
+
+footer .top>div div {
+    float: right;
+}
+
+footer .top>div div p {
+    display: inline-block;
+    width: 242px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    background: #2a3033;
+    color: #fff;
+    font-size: 13px;
+}
+
+footer .top>div div p strong {
+    padding: 0 0 0 15px;
+    font-size: 20px;
+}
+
+footer .top>div div select {
+    font-size: 12px;
+    padding: 0 0 0 21px;
+    color: #191919;
+    width: 200px;
+    height: 45px;
+    box-sizing: border-box;
+    border: none;
+    vertical-align: 3px;
+}
+
+footer .btm {
+    background: #4c5459;
+    padding: 40px 0 43px;
+    text-align: center;
+}
+
+footer .btm p {
+    color: transparent;
+    display: inline-block;
+    width: 131px;
+    height: 51px;
+    background: url(../img/sp_com.png) -150px 0 no-repeat;
+}
+
+footer .btm ul {
+    padding: 30px 0 14px;
+}
+
+footer .btm ul li {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    padding: 20px 10px 0;
+}
+
+footer .btm ul li:after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    margin-top: 4px;
+    width: 1px;
+    height: 8px;
+    background: #fff;
+}
+
+footer .btm ul li:last-child:after {
+    display: none;
+}
+
+footer .btm address {
+    font-size: 14px;
+    color: #fff;
+}
