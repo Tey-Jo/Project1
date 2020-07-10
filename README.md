@@ -9,4 +9,4 @@ This is a korean company, real site url below here.
 
 
 
-<img src="assets\images\postimg\hansol.png">
+<img src="./data/image/hansol.png">
